@@ -1,85 +1,45 @@
 List<String> categories = [
   '記憶力',
-  '注意力',
+  '認知性',
 ];
 
 List<List<String>> gameNames = [
   [
     '配對遊戲',
-    '記憶力遊戲2',
-    '記憶力遊戲3',
-    '記憶力遊戲4',
+    '東尋西覓',
+    '順向回憶',
+    '逆向回憶',
+    '發票兌獎',
   ],
   [
-    '注意力遊戲1',
-    '注意力遊戲2',
+    '連連看',
   ],
 ];
 
 List<List<String>> gameImgs = [
   [
     "assets/gameinfos/puzzle.png",
-    "assets/images/circle.png",
-    "assets/images/circle.png",
-    "assets/images/circle.png",
+    "assets/gameinfos/search.png",
+    "assets/gameinfos/right-arrow.png",
+    "assets/gameinfos/left-arrow.png",
+    "assets/gameinfos/invoice.png",
   ],
   [
-    "assets/images/star.png",
-    "assets/images/star.png",
+
+    "assets/gameinfos/link.png",
   ],
 ];
 
 List<List<String>> gameRoutes = [
   [
     "/match",
-    "/empty",
-    "/empty",
-    "/empty",
+    "/findme",
+    "/forward",
+    "/backward",
+    "/bill",
   ],
   [
-    "/",
-    "/",
+
+    "/link",
   ],
 ];
-class GameInfo {
-  String name;
-  String image;
-
-  GameInfo({
-    required this.name,
-    required this.image,
-  });
-}
-
-class GameList {
-  List<String> gameCateNames = [
-    '記憶力',
-    '注意力',
-  ];
-
-  static const List<List<String>> gameNames = [
-    [
-      '配對遊戲',
-      '記憶力遊戲2',
-      '記憶力遊戲3',
-      '記憶力遊戲4',
-    ],
-    [
-      '注意力遊戲1',
-      '注意力遊戲2',
-    ],
-  ];
-
-  List<List<String>> gameImgs = [
-    [
-      "assets/images/circle.png",
-      "assets/images/circle.png",
-      "assets/images/circle.png",
-      "assets/images/circle.png",
-    ],
-    [
-      "assets/images/circle.png",
-      "assets/images/circle.png",
-    ],
-  ];
-}

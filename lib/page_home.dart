@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,12 +23,37 @@ class _HomePageState extends State<HomePage> {
             child: ListView.builder(
               itemCount: gameInfo.categories.length,
               itemBuilder: (context, index) {
-                print(gameInfo.gameNames[0].length);
                 return Category(index: index);
               },
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: '遊戲清單',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: '帳戶',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            label: '關於',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+          if (_selectedIndex == 1) Navigator.of(context).pushNamedAndRemoveUntil("/login", (Route route) => false);
+          else if (_selectedIndex == 2) Navigator.of(context).pushNamed("/about");
+          else Navigator.of(context).pushNamedAndRemoveUntil("/", (Route route) =>false);
+        },
       ),
     );
   }

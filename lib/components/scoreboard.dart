@@ -5,8 +5,8 @@ import 'package:flutter/painting.dart';
 Widget scoreBoard(String title, String info) {
   return Expanded(
     child: Container(
-      margin: EdgeInsets.all(12),
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 26.0),
+      margin: EdgeInsets.all(5),
+      //padding: EdgeInsets.symmetric(vertical: 1, horizontal: 26.0),
       decoration: BoxDecoration(
         color: Colors.white,
       ),
@@ -19,12 +19,9 @@ Widget scoreBoard(String title, String info) {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
-            height: 6.0,
-          ),
           Text(
             info,
-            style: TextStyle(fontSize: 34.0, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
           ),
         ],
       ),
